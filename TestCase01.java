@@ -27,7 +27,7 @@ public class TestCase01 {
 @Test(dependsOnMethods="logInTest")
   public void publishPostTest()
   {
-	  data.publishPost("Raghu is best Leader", "Vanam will get job surely at the best company");
+	  data.publishPost("");
   }
   @Test(dependsOnMethods="publishPostTest")
   public void close()
