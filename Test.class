@@ -16,3 +16,41 @@ public class LogIn {
 	  By title = By.xpath(".//*[@id='tinymce']");
 	  By publish = By.xpath(".//*[contains(text(),'Publish')]");
 	  String frameID = "tinymce-1_ifr";
+
+//Added few lines by raghu again with dinesh created mail id
+
+public LogIn(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+  
+  public void webSite(String url)
+  {
+	  driver.get(url);
+  }
+	
+	
+  public void logIn(String name, String pwd) {
+	  
+	  //Login with the details
+	  driver.findElement(username).sendKeys(name);
+	  driver.findElement(password).sendKeys(pwd);
+	  driver.findElement(submit).click();
+  }
+  
+  
+  public void publishPost(String dataHeading, String dataTitle)
+  {
+	  driver.findElement(createNewPost).click();
+	  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	  driver.findElement(heading).sendKeys(dataHeading);
+	  driver.switchTo().frame(frameID);
+	  driver.findElement(title).sendKeys(dataTitle);
+	  driver.switchTo().defaultContent();
+	  driver.findElement(publish).click();
+	 
+	  	  
+  }
+  
+  
+}
