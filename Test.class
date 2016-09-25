@@ -1,0 +1,18 @@
+package pages;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class LogIn {
+	
+	public WebDriver driver;
+	  By username = By.xpath(".//*[@id='user_login']");
+	  By password = By.xpath(".//*[@id='user_pass']");
+	  By submit   = By.xpath(".//*[@id='wp-submit']");
+	  By createNewPost = By.xpath("//a[@title='Create a New Post']");
+	  By heading = By.xpath(".//div/textarea[@placeholder='Title']");
+	  By title = By.xpath(".//*[@id='tinymce']");
+	  By publish = By.xpath(".//*[contains(text(),'Publish')]");
+	  String frameID = "tinymce-1_ifr";
